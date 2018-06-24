@@ -10,51 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413174200) do
+ActiveRecord::Schema.define(version: 20180320134444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "application_charges", force: :cascade do |t|
-    t.uuid     "user_id",                              null: false
-    t.decimal  "amount_usd",   precision: 8, scale: 2, null: false
-    t.datetime "date_created",                         null: false
-    t.index ["user_id"], name: "index_application_charges_on_user_id", using: :btree
+  create_table "application_charges", id: :serial, force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.decimal "amount_usd", precision: 8, scale: 2, null: false
+    t.datetime "date_created", null: false
+    t.index ["user_id"], name: "index_application_charges_on_user_id"
   end
 
-  create_table "shops", force: :cascade do |t|
-    t.string   "shopify_domain", null: false
-    t.string   "shopify_token",  null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true, using: :btree
+  create_table "shops", id: :serial, force: :cascade do |t|
+    t.string "shopify_domain", null: false
+    t.string "shopify_token", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true
   end
 
   create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "reset_password_token"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.boolean  "anonymous",              default: false, null: false
-    t.boolean  "confirmed",              default: false, null: false
-    t.string   "access_token"
-    t.string   "website",                                null: false
-    t.integer  "provider"
-    t.string   "username",                               null: false
-    t.boolean  "unsubscribed",           default: false, null: false
-    t.string   "unsubscribe_token"
-    t.integer  "shop_id"
-    t.boolean  "admin",                  default: false
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "anonymous", default: false, null: false
+    t.boolean "confirmed", default: false, null: false
+    t.string "access_token"
+    t.string "website", null: false
+    t.integer "provider"
+    t.string "username", null: false
+    t.boolean "unsubscribed", default: false, null: false
+    t.string "unsubscribe_token"
+    t.integer "shop_id"
+    t.boolean "admin", default: false
+    t.boolean "active_charge", default: false
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

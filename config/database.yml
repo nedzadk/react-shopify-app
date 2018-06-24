@@ -6,13 +6,13 @@ default: &default
 
 development:
   <<: *default
-  database: TODO YOURAPPNAME_development
+  database: nechko_dev_plugin
 
 production:
   <<: *default
-  database: TODO YOURAPPNAME
+  database: nechko_plugin
 
 
 test:
   <<: *default
-  database: TODO YOURAPPNAME_test
+  database: nechko_test_plugin

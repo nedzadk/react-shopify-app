@@ -1,5 +1,14 @@
 GIT
-  remote: https://github.com/pemberton-rank/common.git
+  remote: git://github.com/rails/activeresource.git
+  revision: 44c1325eb5a2aa4dd760c73ec6116a2184c600b5
+  specs:
+    activeresource (5.0.0)
+      activemodel (>= 5.0, < 7)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (>= 5.0, < 7)
+
+GIT
+  remote: https://github.com/nedzadk/common.git
   revision: f1ea5b336522267e7a8d3d4992d630d613e5232d
   tag: v0.1.11
   specs:
@@ -7,15 +16,6 @@ GIT
       active_model_serializers
       nokogiri (>= 1.8.2)
       rails
-
-GIT
-  remote: https://github.com/rails/activeresource.git
-  revision: bc2dd80e26b408086e8814ec81d596f106d110c7
-  specs:
-    activeresource (5.0.0)
-      activemodel (>= 5.0, < 7)
-      activemodel-serializers-xml (~> 1.0)
-      activesupport (>= 5.0, < 7)
 
 GEM
   remote: https://rubygems.org/

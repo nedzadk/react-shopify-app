@@ -1,7 +1,5 @@
-
-shopify_api_key: TODO get this from your Shopify Partner Admin
-shopify_secret: TODO get this from your Shopify Partner Admin
-
+shopify_api_key: 58bec2d7c3db8613edfe281eef39f99a
+shopify_secret: 7f205ff614f4594f0f6a683da30d1cc2
 # email credentials aren't required for dev if you're using Letter Opener
 email_username: TODO from Sendgrid
 email_password: TODO from Sendgrid

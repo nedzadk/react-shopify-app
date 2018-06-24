@@ -15,12 +15,12 @@ else if (__RELEASE__)
   www_base = 'TODO https://www.example.com'
 export const WWW_BASE = www_base
 
-export const APP_NAME = 'TODO App name shown to users like Plug in SEO'
-export const SUPPORT_EMAIL = 'TODO email address'
-export const COMPANY_NAME = 'TODO company name shown to users like Pemberton Rank'
+export const APP_NAME = 'Nechko Plugin'
+export const SUPPORT_EMAIL = 'nedzadk@gmail.com'
+export const COMPANY_NAME = 'Nechko Inc.'
 
 export const validations = {
-  email: 'Please enter valid email address',
-  url:   'Please enter valid url',
+  email: 'nedzadk@gmail.com',
+  url:   'nechko.myshopify.com',
   equal: (a, b) => `${a} does not match the ${b}`,
 }
